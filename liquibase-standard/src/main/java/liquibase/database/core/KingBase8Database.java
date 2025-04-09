@@ -88,7 +88,7 @@ public class KingBase8Database extends AbstractJdbcDatabase {
 
     @Override
     public String getShortName() {
-        return "kingbase8";
+        return "kingbasees";
     }
 
     @Override
