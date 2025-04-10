@@ -118,6 +118,12 @@ public class BlobType extends LiquibaseDataType {
 
             return new DatabaseDataType("BLOB");
         }
+        if (database instanceof KingBase8Database) {
+            if (originalDefinition.toLowerCase(Locale.US).startsWith("bfile")) {
+                return new DatabaseDataType("BFILE");
+            }
+            return new DatabaseDataType("BLOB");
+        }
 
         if (database instanceof FirebirdDatabase) {
             return new DatabaseDataType("BLOB");
