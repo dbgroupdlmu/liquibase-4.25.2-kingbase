@@ -216,7 +216,7 @@ public class UniqueConstraintSnapshotGenerator extends JdbcSnapshotGenerator {
                         + database.correctObjectName(example.getRelation().getName(), Table.class) + "' AND constraintname = '"
                         + database.correctObjectName(name, UniqueConstraint.class) + "'";
                 stmt = new RawSqlStatement(sql);
-            } else if (database instanceof MSSQLDatabase) {
+            } else if (database instanceof MSSQLDatabase || database instanceof KingBase8Database) {
                 String sql = "SELECT " +
                                 "[kc].[name] AS [CONSTRAINT_NAME], " +
                                 "s.name AS constraint_container, " +
